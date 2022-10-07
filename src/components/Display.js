@@ -1,7 +1,7 @@
 const Display = ({ prevCalc, result }) => {
   return (
     <div
-      className='container-fluid mb-2 bg-secondary d-flex flex-column px-3 text-black'
+      className='container-fluid mb-2 bg-secondary d-flex flex-column px-3 text-black rounded'
       style={{ height: '20%' }}
     >
       <p

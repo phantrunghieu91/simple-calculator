@@ -48,6 +48,7 @@ const Calculator = () => {
           setResult('0');
         }
       } else {
+        // had operator
         console.log('Have temp, have operator');
         setTemp(prev => calculate(prev, result, operator));
         setResult('0');
@@ -84,7 +85,11 @@ const Calculator = () => {
       case 'x':
         return firstNum * secondNum;
       case '÷':
-        return firstNum / secondNum;
+        if (secondNum !== '0') return firstNum / secondNum;
+        else {
+          console.log('cannot divine');
+          return undefined;
+        }
       default:
     }
   };
@@ -98,7 +103,7 @@ const Calculator = () => {
 
   return (
     <div
-      className='container bg-black text-light p-3 m-0 flex-column'
+      className='container bg-black text-light p-3 m-0 flex-column rounded'
       style={{ width: '30rem', height: '35rem' }}
     >
       <Display
