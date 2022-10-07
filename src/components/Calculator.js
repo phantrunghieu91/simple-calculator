@@ -34,21 +34,23 @@ const Calculator = () => {
 
   const handleOperatorClick = oper => {
     if (temp === undefined) {
-      console.log('Dont have temp');
+      // console.log('Dont have temp');
       setTemp(parseFloat(result));
       setPrevCalc(`${result} ${oper}`);
       setOperator(oper);
       setResult('0');
     } else {
       if (operator === undefined) {
-        console.log('Have temp dont have operator');
+        // console.log('Have temp dont have operator');
         setOperator(oper);
+        setTemp(parseFloat(result));
+        setResult('0');
       } else {
-        console.log('Have temp, have operator');
+        // console.log('Have temp, have operator');
         setTemp(prev => calculate(prev, result, operator));
         setResult('0');
         if (oper !== '=') {
-          console.log('Operator other than equal');
+          // console.log('Operator other than equal');
           setOperator(oper);
         } else {
           setOperator();
